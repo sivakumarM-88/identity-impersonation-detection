@@ -9,3 +9,4 @@ unidecode
 scipy
 librosa
 streamlit
+torchaudio
