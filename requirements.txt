@@ -10,3 +10,4 @@ scipy
 librosa
 streamlit
 torchaudio
+plotly
