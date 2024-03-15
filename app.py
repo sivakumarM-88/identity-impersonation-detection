@@ -66,7 +66,7 @@ def main():
      uploaded_file = st.file_uploader("upload an audio track to identify real or impersonated one", type=["mp3"])
 
      if uploaded_file is not None:
-          if st.button("analyse audio"):
+          if st.button("analyze audio"):
                col1, col2, col3 = st.columns(3)
 
                with col1:

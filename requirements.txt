@@ -11,5 +11,6 @@ librosa
 streamlit
 torchaudio
 plotly
-FastAPI
+azure-functions
+fastapi
 python-multipart
