@@ -14,3 +14,4 @@ plotly
 azure-functions
 fastapi
 python-multipart
+uvicorn
