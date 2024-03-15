@@ -11,3 +11,5 @@ librosa
 streamlit
 torchaudio
 plotly
+FastAPI
+python-multipart
