@@ -1,5 +1,4 @@
-from fastapi import FastAPI, File, UploadFile
-import azure.functions as func
+from fastapi import FastAPI, File
 from fastapi.responses import JSONResponse
 from app import classify_audio_clip2
 import os
@@ -12,7 +11,7 @@ from typing_extensions import Annotated, Doc
 restapi = FastAPI()
 
 
-@restapi.post("/upload/audio/")
+@restapi.post("/voice/analyze/")
 async def upload_audio_file(sample: Annotated[bytes, File()]):
     audio_clip = validateAudioFile(sample)
     result = classify_audio_clip2(audio_clip)
