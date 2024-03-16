@@ -17,7 +17,7 @@ restapi = FastAPI()
 model = load_model("model3.h5")
 
 # constants
-starttime = datetime.now()
+
 
 CAT6 = ['fear', 'angry', 'neutral', 'happy', 'sad', 'surprise']
 CAT7 = ['fear', 'disgust', 'neutral', 'happy', 'sad', 'surprise', 'angry']
