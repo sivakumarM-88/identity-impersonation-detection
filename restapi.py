@@ -37,6 +37,9 @@ TEST_CAT = ['fear', 'disgust', 'neutral', 'happy', 'sad', 'surprise', 'angry']
 TEST_PRED = np.array([.3, .3, .4, .1, .6, .9, .1])
 
 
+@restapi.get('/ping')
+def health():
+    return JSONResponse(status_code=200, content= {"status": "UP"})
 
 @restapi.post("/voice/analyze/")
 async def upload_audio_file(sample: UploadFile):
