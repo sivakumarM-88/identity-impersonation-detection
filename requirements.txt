@@ -25,3 +25,4 @@ plotly
 azure-functions
 fastapi
 python-multipart
+protobuf==3.20
