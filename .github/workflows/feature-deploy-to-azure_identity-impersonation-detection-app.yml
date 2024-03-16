@@ -66,4 +66,4 @@ jobs:
         with:
           app-name: 'Identity-impersonation-detection-app'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F7217C6613054DEE95CB98B05351A21A }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_992B97F2F6F247998AEB282F40B304DA }}
