@@ -17,7 +17,7 @@ numpy==1.20
 plotly
 pandas
 requests
-opencv-python
+opencv-python-headless
 streamlit
 uvicorn
 torchaudio
