@@ -46,6 +46,11 @@ async def upload_audio_file(sample: UploadFile):
     try:
         start = datetime.now()
         error = None
+        path = None
+        if not sample.size > 0:
+            return JSONResponse(status_code=400, content={"error": "Found zero byte file"})
+        if not sample.filename.endswith('.mp3') and not sample.filename.endswith('.wav'):
+            return JSONResponse(status_code=400, content={"error": "Unsupported file format"}) 
         if not os.path.exists("audio"):
             os.makedirs("audio")
         path = os.path.join("audio", sample.filename)
@@ -54,10 +59,7 @@ async def upload_audio_file(sample: UploadFile):
         # if_save_audio = save_audio(bytes_io)
         emotionResult= decideEmotion(path)
         print("The variable, audioFile is of type:", sample)
-        if not sample.size > 0:
-            return JSONResponse(status_code=400, content={"error": "Found zero byte file"})
-        if not sample.filename.endswith('.mp3'):
-            return JSONResponse(status_code=400, content={"error": "Unsupported file format"})    
+   
         # bytes_io=convert_upload_file_to_bytes_io(sample)
         audio_clip = validateAudioFile(path)
         
@@ -83,8 +85,9 @@ async def upload_audio_file(sample: UploadFile):
     except Exception as e:
         print(e)
         error: repr(e)
-    finally: 
-        os.remove(path)
+    finally:         
+        if path is not None:
+            os.remove(path)
         if error is not None:
             return JSONResponse(status_code=200, content= {"error":error})
 
